@@ -1,0 +1,123 @@
+<body>
+    <h1 ><center>STUDENT FORM</center></h1>
+
+    <center>
+    <table border=5>
+    
+    <tr>
+        <td>name</td>
+        <td> <input  id ="aa"> </td>
+    </tr>
+    
+   
+     <tr>
+        <td>age</td>
+        <td > <input id="ss" > </td>
+    </tr> 
+
+
+     <tr>
+        <td>gender</td>
+        <td > <input type="radio" id="lk" name="gen" value="male" > 
+        <label for="lk">male</label>
+        <input type="radio" id="vc" name="gen"  value="female"> 
+        <label for="vc">female</label>
+    
+    
+    </td>
+    </tr>
+
+
+     <tr>
+        <td>course</td>
+        <td > <select id ="pp" > 
+            <option>java</option>
+            <option>python</option>
+        </td>
+    </tr>
+
+     <tr>
+        <td>email</td>
+        <td > <input type="email" id="ii"> </td>
+    </tr>
+<tr>
+        <td colspan="2"  style="text-align:center">
+           
+        <button style="width:220px;" onclick="travel()" >save</button>
+     
+        </td>
+    </tr>
+   
+</table>
+ </center>
+    <br>
+    <br>
+    <br>
+   <center> <table border=5 id="popo">
+      <tr>
+        <th>name</th>
+        <th>age</th>
+         <th>gender</th>
+        <th>course</th>
+       <th>email</th>
+       <th>clear</th>
+       
+      </tr>
+
+
+      <tr id="taa">
+
+      </tr>
+
+
+
+    </table>
+        </center>
+    <script>
+     
+        
+        
+
+
+        function travel()
+        {
+        var nahe=document.getElementById("aa").value
+        var age=document.getElementById("ss").value
+        var gender=document.querySelector('input[name="gen"]:checked')?.value //"not selected";
+        var course=document.getElementById("pp").value
+        var email=document.getElementById("ii").value
+    
+        var tag=document.createElement("tr")
+        var tag1=document.createElement("td")
+        var tag2=document.createElement("td")
+        var tag3=document.createElement("td")
+        var tag4=document.createElement("td")
+        var tag5=document.createElement("td")
+        var tag7=document.createElement("td")
+        
+
+        var taa=document.getElementById("taa")
+        var popo=document.getElementById("popo")
+        
+            tag1.innerHTML=nahe
+            tag2.innerHTML=age
+            tag3.textContent=gender
+            tag4.textContent=course
+            tag5.textContent=email
+            tag7.innerHTML="<button onclick='dell(event)'>delete</button>"
+         tag.append(tag1,tag2,tag3,tag4,tag5,tag7)
+         popo.append(tag)
+      
+        }
+
+
+        function dell(event){
+            event.target.parentElement.parentElement.remove()
+
+        }
+
+
+
+    </script>
+ 
+</body>
